@@ -75,7 +75,10 @@
     <main class="w-full">
 
         <!-- 1. Hero / About Section -->
-        <section id="hero" class="min-h-screen pt-24 pb-12 flex items-center justify-center text-center w-full">
+        <!-- ** HIGHLIGHT START ** -->
+        <!-- Removed 'min-h-screen' here to let the JavaScript control the exact height -->
+        <section id="hero" class="pt-24 pb-12 flex items-center justify-center text-center w-full">
+        <!-- ** HIGHLIGHT END ** -->
             <!-- Content constrained internally for readability -->
             <div class="space-y-6 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 
@@ -421,6 +424,32 @@
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // ** HIGHLIGHT START ** // JavaScript to calculate the actual viewport height (vh)
+        // This is crucial for making the hero section fill the screen reliably on mobile devices.
+        function setHeroHeight() {
+            const heroSection = document.getElementById('hero');
+            // 1. Get the height of the fixed header
+            const headerHeight = document.querySelector('header').offsetHeight;
+            // 2. Get the current viewport height
+            const viewportHeight = window.innerHeight;
+            
+            // 3. Set the hero section's height dynamically: Viewport - Header height
+            // We ensure a minimum height as a fallback for extremely short screens
+            if (viewportHeight > 600) { 
+                heroSection.style.height = `${viewportHeight - headerHeight}px`;
+            } else {
+                heroSection.style.minHeight = '600px'; 
+                heroSection.style.height = 'auto'; // Revert to auto if min-height is taking over
+            }
+        }
+
+        // Run once on load
+        window.addEventListener('load', setHeroHeight);
+        // Run on resize (for screen rotations or desktop resizing)
+        window.addEventListener('resize', setHeroHeight);
+        
+        // ** HIGHLIGHT END **
     </script>
 </body>
 </html>
