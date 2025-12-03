@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiara Jamal | Data Science Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for DARK Mode aesthetic and smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark gray/nearly black background (Gray 900) */
+            color: #f9fafb; /* Light text (Gray 50) */
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for aesthetics */
+        body::-webkit-scrollbar { width: 8px; }
+        body::-webkit-scrollbar-track { background: #1f2937; /* Gray 800 */ }
+        body::-webkit-scrollbar-thumb { background: #4b5563; /* Gray 600 */ border-radius: 10px; }
+        body::-webkit-scrollbar-thumb:hover { background: #6b7280; /* Gray 500 */ }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #1f2937; /* Dark card background (Gray 800) */
+            border: 1px solid #374151; /* Gray 700 border */
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+            /* Subtle teal shadow on hover */
+            box-shadow: 0 10px 15px -3px rgba(6, 182, 212, 0.2), 0 4px 6px -4px rgba(6, 182, 212, 0.1); 
+        }
+        .accent-text {
+            color: #22d3ee; /* Cyan 400 - bright accent */
+        }
+        .accent-bg {
+            background-color: #06b6d4; /* Teal 500 */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation (Dark Background) -->
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm shadow-xl border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold accent-text hover:text-cyan-400 transition duration-300">Kiara Jamal</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-300 hover:accent-text transition duration-300">About</a>
+                <a href="#skills" class="text-gray-300 hover:accent-text transition duration-300">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:accent-text transition duration-300">Projects</a>
+                <a href="#experience" class="text-gray-300 hover:accent-text transition duration-300">Experience</a>
+                <a href="#contact" class="text-gray-300 hover:accent-text transition duration-300">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-300 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 pb-2 border-t border-gray-700">
+            <a href="#about" class="block px-4 py-2 text-gray-200 hover:bg-gray-700">About</a>
+            <a href="#skills" class="block px-4 py-2 text-gray-200 hover:bg-gray-700">Skills</a>
+            <a href="#projects" class="block px-4 py-2 text-gray-200 hover:bg-gray-700">Projects</a>
+            <a href="#experience" class="block px-4 py-2 text-gray-200 hover:bg-gray-700">Experience</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-200 hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- 1. Hero / About Section -->
+        <section id="hero" class="min-h-screen pt-24 pb-12 flex items-center justify-center text-center">
+            <div class="space-y-6 max-w-4xl">
+                
+                <!-- Profile Photo -->
+                <div class="flex justify-center mb-6">
+                    <img id="profile-photo"
+                         src="uploaded:a24d5142-9829-47a7-862d-14aa63b0854d.jpg" 
+                         alt="Kiara Jamal Professional Profile Photo"
+                         class="w-40 h-40 rounded-full object-cover border-4 border-cyan-500 shadow-lg"
+                         onerror="this.onerror=null; this.src='https://placehold.co/160x160/1f2937/d1d5db?text=KJ';"
+                    >
+                </div>
+                <!-- End Profile Photo -->
+
+                <p class="text-xl accent-text font-medium tracking-wide uppercase">Hi, I'm</p>
+                <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-teal-300">
+                    Kiara Jamal
+                </h1>
+                <h2 class="text-3xl sm:text-4xl font-light text-gray-300">
+                    Data Science • Analytics • Machine Learning
+                </h2>
+                <p id="about" class="text-lg text-gray-400 max-w-3xl mx-auto pt-4">
+                    I’m a Data Science graduate student who enjoys finding patterns in data and turning them into useful tools. Whether it’s predicting trends, recommending outfits, detecting anomalies, or analyzing sales behavior, I aim to create solutions that are intuitive, meaningful, and grounded in strong analytical thinking.
+                </p>
+                <div class="flex justify-center space-x-4 pt-6">
+                    <a href="#projects" class="px-8 py-3 accent-bg text-white font-semibold rounded-full shadow-lg hover:bg-cyan-600 transition duration-300 transform hover:scale-105">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="px-8 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-full hover:bg-gray-800 transition duration-300 transform hover:scale-105">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Skills Section -->
+        <section id="skills" class="py-20 bg-gray-800 rounded-xl shadow-inner">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-100 border-b-2 border-cyan-400 pb-2 inline-block mx-auto">Core Competencies</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                
+                <!-- ML & Modeling -->
+                <div class="p-6 rounded-xl shadow-md border border-gray-700 bg-gray-900">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="brain-circuit" class="w-6 h-6 text-fuchsia-400"></i>
+                        <h3 class="text-xl font-semibold text-gray-100">ML & Analysis</h3>
+                    </div>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li>K-Means Clustering</li>
+                        <li>ARIMA, Linear Regression</li>
+                        <li>PCA, Enhanced LBP</li>
+                        <li>Statistical Analysis</li>
+                    </ul>
+                </div>
+
+                <!-- Programming & Tools -->
+                <div class="p-6 rounded-xl shadow-md border border-gray-700 bg-gray-900">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="code" class="w-6 h-6 text-lime-400"></i>
+                        <h3 class="text-xl font-semibold text-gray-100">Programming</h3>
+                    </div>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li>Python, SQL, Java, C++</li>
+                        <li>HTML, CSS, PHP (Web)</li>
+                        <li>Power BI (Visualization)</li>
+                        <li>Docker, React.js</li>
+                    </ul>
+                </div>
+
+                <!-- Data Engineering & Processing -->
+                <div class="p-6 rounded-xl shadow-md border border-gray-700 bg-gray-900">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="database" class="w-6 h-6 text-sky-400"></i>
+                        <h3 class="text-xl font-semibold text-gray-100">Data & DevOps</h3>
+                    </div>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li>Data Cleaning/Preprocessing</li>
+                        <li>Statistical Modeling</li>
+                        <li>Data Integrity & Refinement</li>
+                        <li>Unit/Integration Testing (Jest)</li>
+                    </ul>
+                </div>
+
+                <!-- Specialized Domains -->
+                <div class="p-6 rounded-xl shadow-md border border-gray-700 bg-gray-900">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-amber-400"></i>
+                        <h3 class="text-xl font-semibold text-gray-100">Domains</h3>
+                    </div>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li>Computer Vision</li>
+                        <li>Time Series Forecasting</li>
+                        <li>Financial Technology</li>
+                        <li>Autonomous Driving Data</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3. Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-100 border-b-2 border-cyan-400 pb-2 inline-block mx-auto">Academic & Personal Projects</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- Project 1: Personal Finance Management System -->
+                <div class="project-card p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3 accent-text">Personal Finance Management System</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">K-Means</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">ARIMA/LR</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Forecasting (85% Acc.)</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Budgeting</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        A comprehensive personal finance tool developed to enhance user savings and provide financial clarity.
+                    </p>
+                    <ul class="text-gray-300 list-disc list-inside space-y-1 text-sm">
+                        <li>Forecasted expenses with **85% accuracy** and generated personalized budgets, leading to a **20% improvement in user savings**.</li>
+                        <li>Employed K-Means clustering for user behavior analysis and used ARIMA/Linear Regression for prediction.</li>
+                        <li>Integrated Power BI (or similar visualization tools) for presenting actionable insights and dashboards.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2: Real-time Face Attendance System -->
+                <div class="project-card p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3 accent-text">Real-time Face Attendance System</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Computer Vision</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">PCA / LBP</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">95.76% Accuracy</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Dataset Prep</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        A collaborative project focusing on developing a robust and highly accurate real-time facial recognition system.
+                    </p>
+                    <ul class="text-gray-300 list-disc list-inside space-y-1 text-sm">
+                        <li>Engineered features using **Enhanced Local Binary Pattern (LBP)** and **Principal Component Analysis (PCA)** techniques.</li>
+                        <li>Achieved up to **95.76% accuracy** on the Yale Face Database and **100% accuracy** on high-quality custom images.</li>
+                        <li>Collected and prepared a dataset of over 200 labeled facial images, incorporating diverse conditions for robustness.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3: Sales Dataset Analysis -->
+                <div class="project-card p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3 accent-text">Sales Dataset Analysis & Forecasting</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">EDA</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">RFM Segmentation</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Time Series</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Business Insights</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Comprehensive Exploratory Data Analysis (EDA) and segmentation modeling on retail sales data to drive strategic business decisions.
+                    </p>
+                    <ul class="text-gray-300 list-disc list-inside space-y-1 text-sm">
+                        <li>Identified key seasonality, revenue patterns, and top-performing products/categories through full EDA.</li>
+                        <li>Implemented **RFM (Recency, Frequency, Monetary) segmentation** to categorize customers and improve targeted marketing efforts.</li>
+                        <li>Provided actionable business insights and short-term forecasts for inventory and sales optimization.</li>
+                    </ul>
+                </div>
+                
+                <!-- Project 4: Anomaly Detection -->
+                <div class="project-card p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3 accent-text">Time-Series Anomaly Detection</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Isolation Forest</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">LOF</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Outlier Analysis</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Visualisation</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Designed and deployed models for real-time anomaly detection across time-series and transactional datasets to flag suspicious activity.
+                    </p>
+                    <ul class="text-gray-300 list-disc list-inside space-y-1 text-sm">
+                        <li>Utilized advanced unsupervised learning models, specifically **Isolation Forest** and **Local Outlier Factor (LOF)**.</li>
+                        <li>Implemented rolling Z-score thresholds to dynamically adjust detection sensitivity over time.</li>
+                        <li>Successfully flagged suspicious spikes, dips, and rare transactional patterns, reducing potential fraud/errors.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 5: Wellness Clinic Patient Outcome Prediction (NEW) -->
+                <div class="project-card p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3 accent-text">Wellness Clinic Patient Outcome Prediction</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Classification</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Logistic Regression</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Decision Trees</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Health Informatics</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Used patient historical data to predict health outcomes (e.g., risk of condition or treatment success) and provide actionable clinical recommendations.
+                    </p>
+                    <ul class="text-gray-300 list-disc list-inside space-y-1 text-sm">
+                        <li>Applied **Logistic Regression** and **Decision Trees** for classification tasks on diverse clinical datasets.</li>
+                        <li>Identified key socio-economic and physiological factors influencing patient health trajectories and treatment success.</li>
+                        <li>Developed a predictive tool to aid clinic staff in prioritizing high-risk cases and improving operational efficiency in scheduling and resource allocation.</li>
+                    </ul>
+                </div>
+
+
+                <!-- Project 6: Time Series Forecasting – Sunspot Prediction (Original) -->
+                <div class="project-card p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3 accent-text">Sunspot Activity Forecasting</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">FBProphet</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Time Series</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Visualization</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        A forecasting model focusing on solar activity using advanced time series libraries.
+                    </p>
+                    <ul class="text-gray-300 list-disc list-inside space-y-1 text-sm">
+                        <li>Employed FBProphet to model and forecast complex cyclical patterns in sunspot data.</li>
+                        <li>Provides predictions for daily, monthly mean, and yearly mean sunspot activity.</li>
+                        <li>Includes comprehensive visualization of forecasts and calculated error metrics (e.g., RMSE, MAE).</li>
+                    </ul>
+                </div>
+
+                <!-- Project 7: Flight Delay Analysis (SQL Project) -->
+                <div class="project-card p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-3 accent-text">Flight Delay Analysis</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">SQL</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Data Analysis</span>
+                        <span class="bg-cyan-900 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-cyan-700">Harvard Dataverse</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Team-based analysis of flight data from the Harvard Dataverse, focusing on the year 2003.
+                    </p>
+                    <ul class="text-gray-300 list-disc list-inside space-y-1 text-sm">
+                        <li>Executed complex SQL queries to identify the top performing and most delayed airports and carriers.</li>
+                        <li>Analyzed carrier performance and determined primary causes of flight delays.</li>
+                        <li>Contributed to the team's final presentation, responsible for building key visualizations.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- 4. Professional Experience Section -->
+        <section id="experience" class="py-20 border-t border-gray-700">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-100 border-b-2 border-cyan-400 pb-2 inline-block mx-auto">Professional Experience</h2>
+
+            <div class="space-y-12">
+                <!-- Capgemini -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold accent-text">Software Engineer Intern</h3>
+                            <p class="text-xl text-gray-200">Capgemini Technology Services India Limited</p>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2 sm:mt-0">May 2023 - November 2023 | Pune, India</p>
+                    </div>
+                    <ul class="text-gray-300 list-disc list-inside space-y-2 text-md">
+                        <li>Optimized **Dockerfiles for React.js applications**, reducing deployment times by **20%** and improving consistency (30% bug reduction).</li>
+                        <li>Analyzed and refined **5+ data models and workflows**, significantly enhancing data integrity across multiple enterprise systems.</li>
+                        <li>Increased code coverage by **25%** by writing robust unit and integration tests using Jest and React Testing Library.</li>
+                        <li>Diagnosed and resolved **30+ production issues**, directly contributing to system stability and user experience.</li>
+                    </ul>
+                </div>
+
+                <!-- Ideas to Impacts -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold accent-text">Data Annotator</h3>
+                            <p class="text-xl text-gray-200">Ideas to Impacts Digital Pvt. Ltd</p>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2 sm:mt-0">December 2021 - January 2022 | Pune, India</p>
+                    </div>
+                    <ul class="text-gray-300 list-disc list-inside space-y-2 text-md">
+                        <li>Cleaned and preprocessed real-world driving records, resolving inconsistencies and boosting model accuracy by **25%**.</li>
+                        <li>Labeled images with key features (road signs, lanes, vehicles), enhancing autonomous driving models and improving detection accuracy by **30%**.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 5. Contact/Footer Section -->
+        <section id="contact" class="py-20 text-center border-t border-gray-700 bg-gray-900 rounded-b-xl">
+            <h2 class="text-4xl font-bold mb-6 text-gray-100">Let's Connect</h2>
+            <p class="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
+                I am actively seeking roles that leverage my skills in data science, machine learning, and software engineering. I'm eager to discuss how I can contribute to your team.
+            </p>
+            <div class="flex justify-center space-x-6 text-cyan-400">
+                <!-- Links replaced with placeholders from resume -->
+                <a href="mailto:kiarajamal@gmail.com" class="hover:text-cyan-200 transition duration-300 transform hover:scale-110">
+                    <i data-lucide="mail" class="w-8 h-8"></i>
+                </a>
+                <a href="#" class="hover:text-cyan-200 transition duration-300 transform hover:scale-110" target="_blank">
+                    <i data-lucide="linkedin" class="w-8 h-8"></i>
+                </a>
+                <a href="#" class="hover:text-cyan-200 transition duration-300 transform hover:scale-110" target="_blank">
+                    <i data-lucide="github" class="w-8 h-8"></i>
+                </a>
+                <a href="#" class="hover:text-cyan-200 transition duration-300 transform hover:scale-110" target="_blank">
+                    <i data-lucide="phone" class="w-8 h-8"></i>
+                </a>
+            </div>
+            <p class="mt-12 text-sm text-gray-500">&copy; 2025 Kiara Jamal. Built with Tailwind CSS.</p>
+        </section>
+
+    </main>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click (for smooth scrolling)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
